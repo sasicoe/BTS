@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 618.38305001469371,
+            "y": -50
+          },
+          "nodeIndex": "Product3",
+          "nodeLineageTag": "f7784195-05da-4415-b37a-10d96a3eb2ae",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.20156119318528,
+            "y": -19.155302040154027
+          },
+          "nodeIndex": "Sales1",
+          "nodeLineageTag": "f99a9050-ea20-4b4e-8842-58a02a869512",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 39.985110779600177
+          },
+          "nodeIndex": "Territory2",
+          "nodeLineageTag": "096db830-0780-4fbd-95c3-326f1cd80918",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

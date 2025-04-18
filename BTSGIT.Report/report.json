@@ -1,0 +1,60 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.62\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Sales",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "8c0f1e903352e1c56d84",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1ffdad57a15320b1be52\",\"layouts\":[{\"id\":0,\"position\":{\"x\":504.2287327920932,\"y\":99.2192022590893,\"z\":2,\"width\":447.29968231556654,\"height\":224.46311330744794,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Territory2.Country\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Sales1.Order Quantity)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Territory2\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"Sales1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Country\"},\"Name\":\"Territory2.Country\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Order Quantity\"}},\"Function\":0},\"Name\":\"Sum(Sales1.Order Quantity)\",\"NativeReferenceName\":\"Sum of Order Quantity\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Order Quantity\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"labelStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'Percent of total'\"}}}}}]},\"vcObjects\":{\"visualHeader\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"visualTooltip\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Order Quantity'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 224.46,
+          "width": 447.30,
+          "x": 504.23,
+          "y": 99.22,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"cc0ff67a89fb6fcc4c6a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":81.40772698628145,\"y\":99.27771583692859,\"z\":0,\"width\":422.9230694653158,\"height\":591.6951863880944,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Territory2.Country\"},{\"queryRef\":\"Product3.Category\"},{\"queryRef\":\"Sum(Sales1.Sales Amount)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Territory2\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Product3\",\"Type\":0},{\"Name\":\"s\",\"Entity\":\"Sales1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Country\"},\"Name\":\"Territory2.Country\",\"NativeReferenceName\":\"Country\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Category\"},\"Name\":\"Product3.Category\",\"NativeReferenceName\":\"Category\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Sales Amount\"}},\"Function\":0},\"Name\":\"Sum(Sales1.Sales Amount)\",\"NativeReferenceName\":\"Sum of Sales Amount\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 591.70,
+          "width": 422.92,
+          "x": 81.41,
+          "y": 99.28,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"eabb14584deed0dfe76a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":77.4366183528043,\"y\":0,\"z\":1,\"width\":1137.7226234912016,\"height\":91.3354985699743,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Git hub Integration Demo Project\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Calibri\",\"fontSize\":\"32pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 91.34,
+          "width": 1137.72,
+          "x": 77.44,
+          "y": 0.00,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
