@@ -10,13 +10,12 @@
       "nodes": [
         {
           "location": {
-            "x": 618.38305001469371,
-            "y": -50
+            "x": 50,
+            "y": 39.985110779600177
           },
-          "nodeIndex": "Product3",
-          "nodeLineageTag": "f7784195-05da-4415-b37a-10d96a3eb2ae",
+          "nodeIndex": "Territory",
           "size": {
-            "height": 296,
+            "height": 176,
             "width": 234
           },
           "zIndex": 0
@@ -26,8 +25,7 @@
             "x": 334.20156119318528,
             "y": -19.155302040154027
           },
-          "nodeIndex": "Sales1",
-          "nodeLineageTag": "f99a9050-ea20-4b4e-8842-58a02a869512",
+          "nodeIndex": "Sales",
           "size": {
             "height": 300,
             "width": 234
@@ -36,13 +34,12 @@
         },
         {
           "location": {
-            "x": 50,
-            "y": 39.985110779600177
+            "x": 618.38305001469371,
+            "y": -50
           },
-          "nodeIndex": "Territory2",
-          "nodeLineageTag": "096db830-0780-4fbd-95c3-326f1cd80918",
+          "nodeIndex": "Product",
           "size": {
-            "height": 176,
+            "height": 296,
             "width": 234
           },
           "zIndex": 0

@@ -1,4 +1,4 @@
-table Sales1
+table Sales
 	lineageTag: f99a9050-ea20-4b4e-8842-58a02a869512
 
 	column SalesOrderLineKey
@@ -141,15 +141,21 @@ table Sales1
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition Sales1 = m
+	partition Sales = m
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\BALACSX1\OneDrive - Abbott\Desktop\2025\PBI Office Hour\4. April\Demo_Sales_Dataset.xlsx"), null, true),
-				    Sales_Table = Source{[Item="Sales",Kind="Table"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(Sales_Table,{{"SalesOrderLineKey", Int64.Type}, {"ResellerKey", Int64.Type}, {"CustomerKey", Int64.Type}, {"ProductKey", Int64.Type}, {"OrderDateKey", Int64.Type}, {"DueDateKey", Int64.Type}, {"ShipDateKey", Int64.Type}, {"SalesTerritoryKey", Int64.Type}, {"Order Quantity", Int64.Type}, {"Unit Price", type number}, {"Extended Amount", type number}, {"Unit Price Discount Pct", Int64.Type}, {"Product Standard Cost", type number}, {"Total Product Cost", type number}, {"Sales Amount", type number}})
+				    Source = SharePoint.Files("https://abbott-my.sharepoint.com/personal/sasikumar_balachandran1_abbott_com/", [ApiVersion = 15]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Name] = "Demo_Sales_Dataset.xlsx")),
+				    #"Demo_Sales_Dataset xlsx_https://abbott-my sharepoint com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4  April/" = #"Filtered Rows"{[Name="Demo_Sales_Dataset.xlsx",#"Folder Path"="https://abbott-my.sharepoint.com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4. April/"]}[Content],
+				    #"Imported Excel Workbook" = Excel.Workbook(#"Demo_Sales_Dataset xlsx_https://abbott-my sharepoint com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4  April/"),
+				    Sales_Sheet = #"Imported Excel Workbook"{[Item="Sales",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sales_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SalesOrderLineKey", Int64.Type}, {"ResellerKey", Int64.Type}, {"CustomerKey", Int64.Type}, {"ProductKey", Int64.Type}, {"OrderDateKey", Int64.Type}, {"DueDateKey", Int64.Type}, {"ShipDateKey", Int64.Type}, {"SalesTerritoryKey", Int64.Type}, {"Order Quantity", Int64.Type}, {"Unit Price", type number}, {"Extended Amount", type number}, {"Unit Price Discount Pct", Int64.Type}, {"Product Standard Cost", type number}, {"Total Product Cost", type number}, {"Sales Amount", type number}})
 				in
 				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

@@ -1,4 +1,4 @@
-table Product3
+table Product
 	lineageTag: f7784195-05da-4415-b37a-10d96a3eb2ae
 
 	column ProductKey
@@ -27,14 +27,12 @@ table Product3
 		annotation SummarizationSetBy = Automatic
 
 	column 'Standard Cost'
-		dataType: double
+		dataType: string
 		lineageTag: ab016012-4ec5-4c7d-9429-82bb11e43e8d
 		summarizeBy: none
 		sourceColumn: Standard Cost
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Color
 		dataType: string
@@ -45,14 +43,12 @@ table Product3
 		annotation SummarizationSetBy = Automatic
 
 	column 'List Price'
-		dataType: double
+		dataType: string
 		lineageTag: 6bcfb91a-80f8-46ea-b3e7-3efa8a7f1cba
 		summarizeBy: none
 		sourceColumn: List Price
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Model
 		dataType: string
@@ -78,15 +74,21 @@ table Product3
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Product3 = m
+	partition Product = m
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\BALACSX1\OneDrive - Abbott\Desktop\2025\PBI Office Hour\4. April\Demo_Sales_Dataset.xlsx"), null, true),
-				    Product_Table = Source{[Item="Product",Kind="Table"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(Product_Table,{{"ProductKey", Int64.Type}, {"SKU", type text}, {"Product", type text}, {"Standard Cost", type number}, {"Color", type text}, {"List Price", type number}, {"Model", type text}, {"Subcategory", type text}, {"Category", type text}})
-				in
+				    Source = SharePoint.Files("https://abbott-my.sharepoint.com/personal/sasikumar_balachandran1_abbott_com/", [ApiVersion = 15]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Name] = "Demo_Sales_Dataset.xlsx")),
+				    #"Demo_Sales_Dataset xlsx_https://abbott-my sharepoint com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4  April/" = #"Filtered Rows"{[Name="Demo_Sales_Dataset.xlsx",#"Folder Path"="https://abbott-my.sharepoint.com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4. April/"]}[Content],
+				    #"Imported Excel Workbook" = Excel.Workbook(#"Demo_Sales_Dataset xlsx_https://abbott-my sharepoint com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4  April/"),
+				    Sales_Sheet = #"Imported Excel Workbook"{[Item="Product",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sales_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductKey", Int64.Type}})
+				   in
 				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
