@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "BTSGIT_Apr22"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5d36b0ae-c8d2-43bc-b994-ba321f686f76"
+  }
+}

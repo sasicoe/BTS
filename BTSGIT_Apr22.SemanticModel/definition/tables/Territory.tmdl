@@ -1,0 +1,54 @@
+table Territory
+	lineageTag: 096db830-0780-4fbd-95c3-326f1cd80918
+
+	column SalesTerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: dca03196-34ab-46bc-8cd1-8fbd7856d7b3
+		summarizeBy: none
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 62d735f9-0f64-443c-b7d2-fbe57059b485
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: b2f5e37b-9399-40fb-b7ec-6e521a880ae8
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Group
+		dataType: string
+		lineageTag: a8e31907-ee02-4c1c-84e9-c30ea72f44a6
+		summarizeBy: none
+		sourceColumn: Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Territory = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Files("https://abbott-my.sharepoint.com/personal/sasikumar_balachandran1_abbott_com/", [ApiVersion = 15]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Name] = "Demo_Sales_Dataset.xlsx")),
+				    #"Demo_Sales_Dataset xlsx_https://abbott-my sharepoint com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4  April/" = #"Filtered Rows"{[Name="Demo_Sales_Dataset.xlsx",#"Folder Path"="https://abbott-my.sharepoint.com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4. April/"]}[Content],
+				    #"Imported Excel Workbook" = Excel.Workbook(#"Demo_Sales_Dataset xlsx_https://abbott-my sharepoint com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4  April/"),
+				    Sales_Sheet = #"Imported Excel Workbook"{[Item="Territory",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sales_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"SalesTerritoryKey", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

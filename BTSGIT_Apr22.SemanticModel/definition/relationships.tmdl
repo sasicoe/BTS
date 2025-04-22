@@ -1,0 +1,8 @@
+relationship AutoDetected_b0750ceb-3ee9-4d15-adf5-3dc608aed4d3
+	fromColumn: Sales.SalesTerritoryKey
+	toColumn: Territory.SalesTerritoryKey
+
+relationship AutoDetected_f2eeed62-a9ca-4b9b-b1bc-af8161779362
+	fromColumn: Sales.ProductKey
+	toColumn: Product.ProductKey
+

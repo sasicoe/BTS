@@ -1,0 +1,94 @@
+table Product
+	lineageTag: f7784195-05da-4415-b37a-10d96a3eb2ae
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ab249e8-e9a5-4bb7-aca8-4ce9baaa5f46
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU
+		dataType: string
+		lineageTag: b24452d0-d698-41b9-95f7-e90e67a638d1
+		summarizeBy: none
+		sourceColumn: SKU
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: ad9c6646-4d3f-49ad-a96f-af9c84f2abfb
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standard Cost'
+		dataType: string
+		lineageTag: ab016012-4ec5-4c7d-9429-82bb11e43e8d
+		summarizeBy: none
+		sourceColumn: Standard Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: de7de5f4-1d9f-45c9-83fd-95bf1d8ceaa4
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'List Price'
+		dataType: string
+		lineageTag: 6bcfb91a-80f8-46ea-b3e7-3efa8a7f1cba
+		summarizeBy: none
+		sourceColumn: List Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 09cb1a3f-645e-4b91-a6bf-22e827dd1a4d
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subcategory
+		dataType: string
+		lineageTag: 30c2f9fd-bdde-423a-915e-349622cfca8f
+		summarizeBy: none
+		sourceColumn: Subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: e562fd56-be20-4a30-92e8-fcfe82904ec9
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Product = m
+		mode: import
+		source =
+				let
+				    Source = SharePoint.Files("https://abbott-my.sharepoint.com/personal/sasikumar_balachandran1_abbott_com/", [ApiVersion = 15]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each ([Name] = "Demo_Sales_Dataset.xlsx")),
+				    #"Demo_Sales_Dataset xlsx_https://abbott-my sharepoint com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4  April/" = #"Filtered Rows"{[Name="Demo_Sales_Dataset.xlsx",#"Folder Path"="https://abbott-my.sharepoint.com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4. April/"]}[Content],
+				    #"Imported Excel Workbook" = Excel.Workbook(#"Demo_Sales_Dataset xlsx_https://abbott-my sharepoint com/personal/sasikumar_balachandran1_abbott_com/Documents/Desktop/2025/PBI Office Hour/4  April/"),
+				    Sales_Sheet = #"Imported Excel Workbook"{[Item="Product",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sales_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductKey", Int64.Type}})
+				   in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
