@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.62\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Circle",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "1db22181a7446896c805",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"314995ed5e2c8d13ce00\",\"layouts\":[{\"id\":0,\"position\":{\"x\":150,\"y\":77.5,\"width\":300,\"height\":150,\"z\":1,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Circle\",\"textStyle\":{\"fontSize\":\"32pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 150.00,
+          "width": 300.00,
+          "x": 150.00,
+          "y": 77.50,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"8ae25bea634ef6ae8317\",\"layouts\":[{\"id\":0,\"position\":{\"x\":289.5248852806213,\"y\":209.82421461348395,\"z\":0,\"width\":528.6268972820332,\"height\":388.74408753971056,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'oval'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 388.74,
+          "width": 528.63,
+          "x": 289.52,
+          "y": 209.82,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
