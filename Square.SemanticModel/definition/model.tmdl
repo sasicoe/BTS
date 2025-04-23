@@ -1,0 +1,9 @@
+model Model
+	culture: en-US
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBIDesktopVersion = 2.141.1754.0 (25.03)+e4409ed908ce97a5e9747f7dc48da475cf1c71a2
+
+ref cultureInfo en-US
+
