@@ -27,6 +27,21 @@
       "name": "0fa39f525dc0e506401e",
       "visualContainers": [
         {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+          "config": "{\"name\":\"0ac6e353aa0322265892\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.759265795975997,\"y\":79.70067066713732,\"z\":2000,\"width\":352.9601129544652,\"height\":279.76561948464524,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Version 1.1\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 279.77,
+          "width": 352.96,
+          "x": 9.76,
+          "y": 79.70,
+          "z": 2000.00
+=======
+=======
+>>>>>>> 4cb3d0d2e758e2e8dd985d02fe7d64b4b3f2c450
+>>>>>>> Stashed changes
           "config": "{\"name\":\"0ac6e353aa0322265892\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":80,\"width\":280,\"height\":280,\"z\":2000,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Version 1\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
           "filters": "[]",
           "height": 280.00,
@@ -43,6 +58,13 @@
           "x": 10.00,
           "y": 360.00,
           "z": 2001.00
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> 4cb3d0d2e758e2e8dd985d02fe7d64b4b3f2c450
+=======
+>>>>>>> 4cb3d0d2e758e2e8dd985d02fe7d64b4b3f2c450
+>>>>>>> Stashed changes
         },
         {
           "config": "{\"name\":\"8386445f970ea8764e22\",\"layouts\":[{\"id\":0,\"position\":{\"x\":447.29968231556654,\"y\":79.70067066713732,\"z\":0,\"width\":279.76561948464524,\"height\":279.76561948464524,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
