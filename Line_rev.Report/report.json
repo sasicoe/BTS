@@ -27,6 +27,15 @@
       "name": "0fa39f525dc0e506401e",
       "visualContainers": [
         {
+          "config": "{\"name\":\"0ac6e353aa0322265892\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":80,\"width\":280,\"height\":280,\"z\":1001,\"tabOrder\":1001}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Version 1\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"40pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 80.00,
+          "z": 1001.00
+        },
+        {
           "config": "{\"name\":\"8386445f970ea8764e22\",\"layouts\":[{\"id\":0,\"position\":{\"x\":447.29968231556654,\"y\":79.70067066713732,\"z\":0,\"width\":279.76561948464524,\"height\":279.76561948464524,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'line'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
           "filters": "[]",
           "height": 279.77,
@@ -36,13 +45,13 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"90123755205a77da45a2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":437.05497416876403,\"y\":274.6853887932176,\"z\":1,\"width\":300.32269174725127,\"height\":300.32269174725127,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'oval'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "config": "{\"name\":\"90123755205a77da45a2\",\"layouts\":[{\"id\":0,\"position\":{\"x\":437.05497416876403,\"y\":274.6853887932176,\"z\":1000,\"width\":300.32269174725127,\"height\":300.32269174725127,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"shape\",\"drillFilterOtherVisuals\":true,\"objects\":{\"shape\":[{\"properties\":{\"tileShape\":{\"expr\":{\"Literal\":{\"Value\":\"'oval'\"}}}}}],\"rotation\":[{\"properties\":{\"shapeAngle\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
           "filters": "[]",
           "height": 300.32,
           "width": 300.32,
           "x": 437.05,
           "y": 274.69,
-          "z": 1.00
+          "z": 1000.00
         }
       ],
       "width": 1280.00
